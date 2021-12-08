@@ -1,0 +1,144 @@
+<html>
+<head>
+<title> Minecraft Pi </title>
+</head>
+<body>
+<b> Getting Started with Minecraft Pi:</b> 
+<p> *Note: Our Raspberry Pi is fully functional, sadly it was not strong enough to run; Screen Recording, Python, and MinecraftPi altogether. 
+<p> *Our next plan of action was to implicate the same code and process through python and localhost in order to run it on our own personalized computers.
+<br>
+<br>
+<p style="font-size:25px"> Getting Started
+
+	<p> Install PythonIDLE, the latest version:
+	<p><p style="font-size:18px"><a href="https://www.python.org/downloads/">IDLEPython</a></p>
+	<p> Download "Minecraft v1.12 Windows Starter Kit" zip file:
+	<p><p style="font-size:18px"><a href="https://adventuresinminecraft.github.io/">Windows Starter Kit</a></p>
+	<p> Starting with the "AdventuresInMinecraft-PC", make sure you extract the folder to your desktop.
+	<p> Next, open PythonIDLE, create a new file (file, top-right) and save the file to your "Windows Starter Kit" folder, specifically in the "MyAdventures" folder. This is because so your code can import itself to the server.
+	<p> Additionally, navigate to your "AdventuresInMinecraft-PC" folder, and run "start.exe". 
+	<p> Lastly, open your Minecraft Launcher (Must have Minecraft purchased), switch the version to "1.12"(for compatibility requirements), "Start" the Game, navigate to "Multiplayer", and click "Direct Connect", and finally type in "localhost" to connect to your server.
+<p style="font-size:25px"> Video Layouts
+
+
+
+	<p style="font-size:30px"> Hello World: 
+<p> (*Posting the message "Hello World!" to the screen)
+<p> Before inputting code, it is important to realize the "from mcpi.minecraft import Minecraft" and "mc = Minecraft.create()" command allows the connection between PythonIDLE and Minecraft.
+<p> code: mc.postToChat("Hello World!")
+
+<br> <video width="320" height="240" controls>
+	<source src="HelloWorld.mp4" type="video/mp4">
+</video>
+<br> <img src="HelloWorld.jpg"
+width="500"
+height"400" />
+
+
+	<p style="font-size:30px"> PlayerPos & Teleport:
+<p> (*Finding your location, coordinates separating variables, and teleport.)
+<p> code: "pos = mc.player.getPos()" helps to find your location.
+<p>  "x, y, z = mc.player.getPos()" alternatively, a nice way to get coordinates into seperate variables.
+<p>  "mc.player.setPos(x+25, y, z)" specifies a particular location to teleport to (also combine "x, y, z = mc.player.getPos()" beforehand).
+<br> <video width="320" height="240" controls>
+	<source src="Teleport.mp4" type="video/mp4">
+</video>
+<br> <img src="PlayerPos.jpg"
+width="500"
+height"400" />
+<br> <img src="Teleport.jpg"
+width="500"
+height"400" />
+
+
+
+	<p style="font-size:30px"> Set Block:
+<p> (*Placing a single block at a given set of coordinates.)
+<p> code: "x, y, z = mc.player.getPos()" and 
+<p> "mc.setBlock(x+1, y, z, 1) to place a single block at a given set of coordinates.
+<br> <video width="320" height="240" controls>
+	<source src="SetBlock.mp4" type="video/mp4">
+</video>
+<br> <img src="SetBlock.jpg" 
+width="500"
+height"400" />
+	
+
+	<p style="font-size:30px"> 10x10x10 cube solid stone:
+<p> (*As well as setting a single block with "setBlock" you can fill in a volume of space in one go with "setBlocks".)
+<p> code: "stone = 1 (stone is 1 as a variable)", 
+<p> "x, y, z = mc.player.getPos()", 
+<p> "mc.setBlocks(x+1, y+1, z+1, x+11, y+11, z+11, stone)"
+<br> <video width="320" height="240" controls>
+	<source src="TenByTen.mp4" type="video/mp4">
+</video>
+<br> <img src="TenByTen.jpg"
+width="500"
+height"400" />
+	
+
+	<p style="font-size:30px"> Dropping blocks as you walk (Flower):
+<p> (*Drops a flower behind you wherever you walk.)
+<p> Moving location to drop blocks when you walk. 
+<p> code: "from mcpi.minecraft import Minecraft"
+<p> "from time import sleep" 
+<p> "mc = Minecraft.create()
+<p> "flower = 38"
+<p> "while True:"
+<p> "x, y, z = mc.plaer.getPos()"
+<p> "mc.setBlock(x, y, z, flower)"
+<p> "sleep(0.1)" 
+<p> using the command "CTRL+C" will stop the never-ending drop in flowers. 
+<br> <video width="320" height="240" controls>
+	<source src="Flower.mp4" type="video/mp4">
+</video>
+<br> <img src="Flower.jpg"
+width="500"
+height"400" />
+<br> <img src="CtrlC.jpg"
+width="500"
+height"400" />
+
+	
+	<p style="font-size:30px"> TNT:
+<p> (*Interesting blocks like TNT; placing TNT, exploding TNT, and an exploding cube of TNT.)
+<p> Playing with TNT by placing the block, using "left mouse-click" to explode, and creating a cube of TNT to explode and showing results.
+<p> "tnt = 46"
+<p> "mc.setBlock(x, y, z, tnt) or to explode with LMB(leftmousebutton) "mc.setBlock(x, y, z, tnt, 1)"
+<p> "mc.setBlocks(x+1, y+1, z+1, x+11, y+11, z+11, tnt, 1)"
+
+
+<br> <video width="320" height="240" controls>
+	<source src="TNT.mp4" type="video/mp4">
+</video>
+<br> <img src="TNT1.jpg"
+width="500"
+height"400" />
+<br> <img src="TNT2.jpg"
+width="500"
+height"400" />
+<br> <img src="TNT3.jpg"
+width="500"
+height"400" />
+
+
+	<p style="font-size:30px"> Lava:
+<p> (*Placing Flowing Lava" )
+<p> Placing a fluid entity or block known as "flowing lava" 
+<p> code: "from mcpi.minecraft import Minecraft"
+<p> "mc = Minecraft.create()"
+<p> "x, y, z = mc.player.getPos()"
+<p> "lava = 10"
+<p> "mc.setBlock(x+3, y+3, z, lava)"
+
+<br> <video width="320" height="240" controls>
+	<source src="Lava.mp4" type="video/mp4">
+</video>
+<br> <img src="Lava.jpg"
+width="500"
+height"400" />
+
+
+
+
+
